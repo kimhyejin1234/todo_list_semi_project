@@ -188,7 +188,7 @@
 	// 화면 들어오면 무조건 등록된 자료를 일단 조회    
       window.onload = function () {
         document.getElementById('homeBtn').onclick = () => {
-          location.href = '${pageContext.request.contextPath}/todok/main';
+          location.href = '${pageContext.request.contextPath}/main';
         };
 
         selectNum = 1;
