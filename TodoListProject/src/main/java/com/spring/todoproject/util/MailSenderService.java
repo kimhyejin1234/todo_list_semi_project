@@ -29,7 +29,7 @@ public class MailSenderService {
 	public String joinEamil(String email) {
 		int autNum = makeRandomNumber(); // 인증번호 생성
 		
-		String setFrom = "gyu1061@naver.com";
+		String setFrom = "zzzzzzzz@naver.com";
 		String toMail = email; // 수신받을 이메일(가입하고자 하는 사람의 이메일)
 		String title = "TODOK TODOK 회원 가입 인증 이메일 입니다."; //이메일 제목
 		String content = "우리와 함께 해 주셔서 감사합니다." + 
