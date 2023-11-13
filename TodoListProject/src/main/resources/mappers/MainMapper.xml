@@ -59,6 +59,44 @@
 		FROM users
 		WHERE user_id = #{userId}
 	</select>
+	
+	
+	
+	<insert id="insertMyTodo">
+		INSERT INTO todo
+		VALUES (seq_todo_no.NEXTVAL, #{userId}, #{clickDate}, #{todoContent}, 0)
+	</insert>
+	
+	<select id="getlastTodoNo" resultType="string">
+		SELECT seq_todo_no.CURRVAL FROM DUAL
+	</select>
+	
+	<!-- checked true 일 때 -> 1 -->
+	<update id="updateMyTodoChkO">
+		update todo
+		SET CHK_BTN = 1
+		WHERE todo_no = #{todoNo}
+	</update>
+	
+	
+	<!-- checked false 일 때 -> 0 -->
+	<update id="updateMyTodoChkX">
+		update todo
+		SET CHK_BTN = 0
+		WHERE todo_no = #{todoNo}
+	</update>
+	
+	<!-- 클릭된 Date와 userId 에 해당하는 모든 todo 조회 -->
+	<select id="getTodoOfDate" resultType="todo">
+		SELECT * FROM todo
+		WHERE user_id = #{userId} AND click_date = #{clickDate}
+	</select>
+	
+	<!-- todo 삭제 -->
+	<delete id="deleteTodo">
+		DELETE FROM todo
+		WHERE todo_no = #{todoNo}
+	</delete>
 
 </mapper>
 

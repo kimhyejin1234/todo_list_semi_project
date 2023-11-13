@@ -22,9 +22,12 @@
 		<typeAlias type="com.spring.todoproject.myaccount.entity.Users" alias="users" />
 		<typeAlias type="com.spring.todoproject.board.entity.Board" alias="board" />
 	    <typeAlias type="com.spring.todoproject.board.dto.BoareListRequestDTO" alias="boardMap" />
+		<typeAlias type="com.spring.todoproject.main.entity.Todo" alias="todo" />
+		
 		
 		<!-- <typeAlias type="com.spring.todoproject.freeboard.entity.FreeBoard" alias="freeboard" /> -->
-		<typeAlias type="com.spring.todoproject.user.entity.User" alias="user" />
+		 <typeAlias type="com.spring.todoproject.user.entity.User" alias="user" />
+		 <typeAlias type="com.spring.todoproject.login.entity.Login" alias="login" />
 		<!-- <typeAlias type="com.spring.todoproject.reply.entity.Reply" alias="reply" />
 		<typeAlias type="com.spring.todoproject.snsboard.entity.SnsBoard" alias="sns" /> -->
 	</typeAliases>

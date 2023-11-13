@@ -62,7 +62,7 @@ public class UserController {
 		String nickName = request.getParameter("nickName");
 		String email1= request.getParameter("email1");
 		String email2 = request.getParameter("email2");
-//		System.out.println("입력한 id값" + id);
+//		System.out.println("�엯�젰�븳 id媛�" + id);
 		
 		dto.setUserId(id);
 		dto.setUserPw(pw);
@@ -73,7 +73,7 @@ public class UserController {
 		
 		service.insertUserData(dto);
 		
-		return "/todok/main";
+		return "redirect:/main";
 	}
 	
 	

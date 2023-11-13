@@ -46,14 +46,16 @@
 	<update id="updateNickPw">
 		UPDATE users SET
 		    nickname = #{nickName},
-		    user_pw = #{userPw}
+		    user_pw = #{userPw},
+		    profile_color = #{profileColor}
 		WHERE user_id = #{userId}
 	</update>
 	
 	<!-- 유저 닉네임만 수정 (pw 가 null 일 경우) -->
 	<update id="updateNick">
 		UPDATE users SET
-		    nickname = #{nickName}
+		    nickname = #{nickName},
+		    profile_color = #{profileColor}
 		WHERE user_id = #{userId}
 	</update>
 
