@@ -74,6 +74,15 @@ public class LoginController {
  
     }
     
+    @GetMapping("/login/naver/{signal}")
+    public String tokenpass(@PathVariable String signal, Model model) {
+    	model.addAttribute("signal", signal);
+    	System.out.println("signal 응답옴");
+
+    	return "redirect:/main";
+    }
+
+    
 
     
 

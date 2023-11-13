@@ -192,22 +192,10 @@
 
 <hr/>
 
-## 7일차(금): 회의주제 및 작업 개요
+# 시현영상
 
-### 소제목1
+https://github.com/yoojinChung98/java_basic/assets/142370086/e2ebad00-bd8a-45b1-823a-5cc581127227
 
-### 다음 회의 목표
+# 발표ppt
 
-<hr/>
-
-## n일차: 회의주제 및 작업 개요
-
-### 소제목1
-
-### 다음 회의 목표
-
-<hr/>
-
-### 사용한 툴
-
-피그마, 깃, vscode, 그리고 최정현.
+[TODOK_PROJECTS (1).pptx](https://github.com/yoojinChung98/java_basic/files/13331398/TODOK_PROJECTS.1.pptx)

@@ -23,16 +23,13 @@ public class LoginService {
 		System.out.println("아이디: " + userId);
 		System.out.println("비번: " + userPw);
 		String dbPw = mapper.login(userId);
+		
+
 		System.out.println(dbPw);
 		if (dbPw != null) {
-//			//날것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches()
-//			if(encoder.matches(userPw, dbPw)) {
-//				System.out.println("유효성검사 비밀번호 맞음");
-//				return "Success";
-//			}
 			System.out.println("아이디있음");
-			// 날것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches()
-			if (dbPw.equals(userPw)) {
+			//날것의 비밀번호와 암호화된 비밀번호의 일치 여부를 알려주는 matches()
+			if(encoder.matches(userPw, dbPw)) {
 				System.out.println("유효성검사 비밀번호 맞음");
 				return "Success";
 			} else {

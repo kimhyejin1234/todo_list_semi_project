@@ -46,11 +46,7 @@ public class Todo {
 	
 	
 	private LocalDate strToDate(String strDate) {
-		
-		
-		
-		
-		
+	
 		DateTimeFormatter fmt;
 		if(strDate.indexOf("월") == 8) {
 			if(strDate.indexOf("일") == 12) {fmt = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");}

@@ -41,7 +41,7 @@ public class BoardController {
 		// 세션에 담긴 로그인 정보를 통해 유저아이디를 가져올 것.
 		//String userId = (String) session.getAttribute("login");
 		//test 를 위해
-		//session.setAttribute("login","abc1234");
+		session.setAttribute("login","abc1234");
 		mv.setViewName("todok/board");
 		System.out.println("test 를 위한 session data : " + session);
 		return mv;

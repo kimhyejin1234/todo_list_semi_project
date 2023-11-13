@@ -11,7 +11,7 @@
 	<insert id="boardRegist">
 		INSERT INTO board
 		(board_bno,content,user_id)
-		VALUES(seq_board_bno.NEXTVAL, #{content} , #{userId})
+		VALUES(tem_seq.NEXTVAL, #{content} , #{userId})
 	</insert>
 
 

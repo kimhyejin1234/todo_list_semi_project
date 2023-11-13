@@ -112,9 +112,9 @@
     </div>
 
     <div class="mainheader-LrM">
-      <div class="headuserprofile-Ewj"></div>
+      <div class="headuserprofile-Ewj" style="background-color: #D9D9D9;"></div>
       <div class="auto-group-rn1p-xcq">
-        <div class="userid-DHs">${mostLike[0].userId}님, 어서오세요</div>
+        <div class="userid-DHs"></div>
       </div>
     </div>
   </div>
@@ -275,6 +275,8 @@
       let todoDateElement = document.querySelector('.tododate-EDf');
       todoDateElement.textContent =
         selectedYear + '년 ' + selectedMonth + '월 ' + todayDate + '일';
+
+      getTodoOfDate(todayDate);
     }
 
     updateTodayTodoDate();
@@ -288,7 +290,7 @@
         selectedYear + '년 ' + selectedMonth + '월 ' + selectedDate + '일';
 
       // let userId = login;
-      const userId = 'id2';
+      const userId = 'test1234';
 
       let reqUrl = '/main/todo' + userId + '/' + clickDate;
 
@@ -338,7 +340,7 @@
         },
         body: JSON.stringify({
           // 'userId': sessionStorage.getItem("login"),
-          userId: 'id2',
+          userId: 'test1234',
           clickDate: document.querySelector('.tododate-EDf').textContent,
           todoContent: document.getElementById('todoInput').value,
         }),
@@ -566,6 +568,12 @@
 
       getTodoOfDate(date.getDate());
 
+
+
+
+
+
+
       // '가장 많은 좋아요를 받은 할 일' 을 List<dto>로 받아오는 함수
       function getMostLike() {
         fetch('${pageContext.request.contextPath}/main/mostlike')
@@ -632,19 +640,54 @@
           });
       }
 
+
+
+
+
+
       function getNickname(userId) {
-        fetch('${pageContext.request.contextPath}/main/nickname/' + userId)
-          .then((res) => res.text())
+
+        console.log(userId);
+        fetch('${pageContext.request.contextPath}/board/getNickName/' + userId, {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+          .then((res) => res.json())
           .then((data) => {
-            const $userid = document.querySelector('.userid-DHs');
             console.log(data);
-            $userid.textContent = data + '님, 어서오세요';
+            const $userid = document.querySelector('.userid-DHs');
+            $userid.textContent = data.nickName + '님, 어서오세요';
+
+            document.querySelector('.headuserprofile-Ewj').setAttribute(
+              'style',
+              'background-color: #' + data.profileColor
+            );
+
           });
+
+
+
+
+
+
+
+        // function getNickname(userId) {
+        //   console.log(userId);
+
+        //   fetch('${pageContext.request.contextPath}/main/nickname/' + userId)
+        //     .then((res) => res.text())
+        //     .then((data) => {
+        //       const $userid = document.querySelector('.userid-DHs');
+        //       console.log(data);
+        //       $userid.textContent = data + '님, 어서오세요';
+        //     });
       }
 
       getMostLike();
       // 더미데이터 입력해놓음. 나중에 세션에서 가져온 로그인아이디 넣어놓을 것임.
-      getNickname('id2');
+      getNickname(sessionStorage.getItem("userId"));
     };
 
     document.querySelector('.headuserprofile-Ewj').onclick = () => {

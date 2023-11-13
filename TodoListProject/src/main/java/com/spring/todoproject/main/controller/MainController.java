@@ -61,6 +61,7 @@ public class MainController {
 	@GetMapping("/mostlike")
 	@ResponseBody
 	public Map<String, Object> showMostLike() {
+		
 		Map<String, Object> mv = new HashMap<>();
 		List<MostLikeRecomdResponseDTO> dto = service.showMostLike();
 		mv.put("mostLike", dto);
@@ -68,13 +69,41 @@ public class MainController {
 		return mv;
 	}
 	
+//	// 닉네임을 가져오는 메서드
+//	@GetMapping("/nickname/{userId}")
+//	@ResponseBody
+//	public String getNickname(@PathVariable String userId) {
+//		log.info("컨트롤러로 들어왔습니당!!!!!!!!!");
+//		log.info(userId);
+////		Map<String, Object> mv = new HashMap<>();
+//		return service.getNickname(userId);
+//	}
+//	
+	
 	// 닉네임을 가져오는 메서드
-	@GetMapping("/nickname/{userId}")
-	@ResponseBody
-	public String getNickname(@PathVariable String userId ) {
-		Map<String, Object> mv = new HashMap<>();
-		return service.getNickname(userId);
-	}
+		@PostMapping("/getNickName/{userId}")
+//		@ResponseBody
+		public String getNickname(@PathVariable String userId) {
+			log.info("컨트롤러로 들어왔습니당!!!!!!!!!");
+			log.info(userId);
+
+			return service.getNickname(userId);
+		}
+	
+//	@PostMapping("/getNickName/{userId}")
+//    public User getNickName(@PathVariable String userId) {
+//        log.info("userId: {}", userId);
+//
+//
+//        User nickname = service.getNickName(userId);
+//
+//        log.info("nickname: {}", nickname);
+//
+//        return nickname;
+//
+//    }
+	
+	
 	
 	// 투두 데이터를 insert 하는 메서드
 	@PostMapping("/todo")

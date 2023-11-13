@@ -27,6 +27,8 @@ public class MyaccountService {
 	// 프로필 박스에 필요한 값을 받아옴
 	public ProfBoxDTO getProfInfo(String userId) {
 		ProfBoxDTO dto = mapper.getProfInfo(userId);
+		System.out.println("userId: "+userId);
+		System.out.println("dto값은: "+ dto);
 		dto.setBoardLikeCnt(mapper.getBoardLikeCnt(userId));
 		
 		return dto;

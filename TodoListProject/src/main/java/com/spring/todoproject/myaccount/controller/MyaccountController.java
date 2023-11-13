@@ -33,9 +33,9 @@ public class MyaccountController {
 		ModelAndView mv = new ModelAndView();
 		
 		// 세션에 담긴 로그인 정보를 통해 유저아이디를 가져올 것.
-		//String userId = (String) session.getAttribute("login");
+		String userId = (String) session.getAttribute("userId");
 		
-		String userId = "id5";
+		//String userId = "id5";
 		
 		// 프로필 박스에 필요한 값을 "profBox" 라는 이름으로 담음
 		ProfBoxDTO dto1 = service.getProfInfo(userId);
