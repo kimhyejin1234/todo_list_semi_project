@@ -238,7 +238,7 @@
         function insertBoard() {
           const content = document.getElementById('content').value;
 
-          if (userId === '') {
+          if (userId === '' || userId === null) {
             alert('로그인이 필요한 화면입니다');
             return;
           } else if (content === '') {
@@ -427,7 +427,7 @@
         $contentDiv.addEventListener('click', (e) => {
           // 일단 button -> a 기능 막기
 
-          if (userId === '') {
+          if (userId === '' || userId === null) {
             alert('로그인이 필요한 합니다');
             return;
           };
