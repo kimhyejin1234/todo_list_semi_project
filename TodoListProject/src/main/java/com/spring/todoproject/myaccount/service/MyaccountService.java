@@ -53,11 +53,11 @@ public class MyaccountService {
 	// 유저정보 수정
 	public void updateAccount(MyacntUpdRequestDTO dto) {
 		if(dto.getUserPw().equals("")) {
-			log.info("닉네임만 교체!");
+			
 			dto.setProfileColor(dto.getProfileColor().substring(1));
 			mapper.updateNick(dto);
 		} else {
-			log.info("비밀번호도 함께 교체!");
+			
 			dto.setProfileColor(dto.getProfileColor().substring(1));
 			mapper.updateNickPw(dto);
 		}

@@ -290,7 +290,8 @@
         selectedYear + '년 ' + selectedMonth + '월 ' + selectedDate + '일';
 
       // let userId = login;
-      const userId = 'test1234';
+      //const userId = 'test1234';
+      const userId = sessionStorage.getItem('userId');
 
       let reqUrl = '/main/todo' + userId + '/' + clickDate;
 
@@ -340,7 +341,8 @@
         },
         body: JSON.stringify({
           // 'userId': sessionStorage.getItem("login"),
-          userId: 'test1234',
+          //userId: 'test1234',
+          userId : sessionStorage.getItem('userId'),
           clickDate: document.querySelector('.tododate-EDf').textContent,
           todoContent: document.getElementById('todoInput').value,
         }),
